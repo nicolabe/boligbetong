@@ -1,35 +1,183 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
+import styled from "styled-components"
+import logo from "../images/logo.jpg"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const StyledHeader = styled.header`
+  background-color: black;
+`
+
+const StyledLinkTitle = styled(Link)`
+  text-decoration: none;
+  color: ${props => props.theme.primary};
+`
+
+const HeaderWrapper = styled.nav`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+`
+
+const RouteWrapper = styled.ul`
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+
+  @media screen and (max-width: 800px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    z-index: 1;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+
+  &.showing {
+    transform: scale(1, 1);
+  }
+`
+
+const RouteListItem = styled.li`
+  margin-left: 1.0875rem;
+
+  @media screen and (max-width: 800px) {
+    padding: 0.75em 0;
+  }
+`
+
+const RouteLink = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: #ccc;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: #ccc;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: left;
+    -webkit-transform: scaleX(0);
+    -webkit-transition: transform 0.2s ease-in-out 0s;
+    transition: transform 0.2s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+`
+
+const MenuButton = styled.button`
+  height: 35px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: black;
+  border: 0;
+
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+`
+
+const BurgerIcon = styled.span`
+  display: block;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+  background-color: white;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: absolute;
+    background-color: white;
+  }
+
+  &::before {
+    bottom: 7px;
+  }
+
+  &::after {
+    top: 7px;
+  }
+`
+
+const StyledTitle = styled.h1`
+  color: white;
+  font-size: 32px;
+  text-transform: uppercase;
+  margin: 0.3em 0;
+`
+
+const SuperScript = styled.sup`
+  vertical-align: super;
+  font-size: 20px;
+  line-height: 0.5em;
+  top: 0.15em;
+  position: relative;
+`
+
+const Header = ({ siteTitle }) => {
+  const [showMenu, setShowMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
+  return (
+    <StyledHeader>
+      <HeaderWrapper>
+        <MenuButton onClick={toggleMenu}>
+          <BurgerIcon />
+        </MenuButton>
+        <StyledLinkTitle to="/">
+          <StyledTitle>
+            Boligbetong <SuperScript>AS</SuperScript>
+          </StyledTitle>
+        </StyledLinkTitle>
+        <RouteWrapper className={showMenu ? "showing" : ""}>
+          <RouteListItem>
+            <RouteLink to="/prosjekter">Prosjekter</RouteLink>
+          </RouteListItem>
+          <RouteListItem>
+            <RouteLink to="/om">Om oss</RouteLink>
+          </RouteListItem>
+          <RouteListItem>
+            <RouteLink to="/kontakt">Kontakt</RouteLink>
+          </RouteListItem>
+        </RouteWrapper>
+      </HeaderWrapper>
+    </StyledHeader>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
