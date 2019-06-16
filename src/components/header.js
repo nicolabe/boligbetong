@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import styled from "styled-components"
-import logo from "../images/logo.jpg"
 
 const StyledHeader = styled.header`
   background-color: black;
