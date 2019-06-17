@@ -14,12 +14,13 @@ const StyledLinkTitle = styled(Link)`
 
 const HeaderWrapper = styled.nav`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 1.45rem 1.0875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 3;
 `
 
 const RouteWrapper = styled.ul`
@@ -47,7 +48,7 @@ const RouteWrapper = styled.ul`
 `
 
 const RouteListItem = styled.li`
-  margin-left: 1.0875rem;
+  margin-left: 1.4rem;
 
   @media screen and (max-width: 800px) {
     padding: 0.75em 0;
@@ -62,23 +63,22 @@ const RouteLink = styled(Link)`
   font-size: 1.2rem;
 
   &:hover {
-    color: #ccc;
+    color: #eee;
   }
 
   &:before {
     content: "";
     position: absolute;
-    background-color: #ccc;
+    background-color: #eee;
     width: 100%;
     height: 1px;
     bottom: -2px;
     left: 0;
     visibility: hidden;
     transform: scaleX(0);
-    transform-origin: left;
     -webkit-transform: scaleX(0);
-    -webkit-transition: transform 0.2s ease-in-out 0s;
-    transition: transform 0.2s ease-in-out 0s;
+    -webkit-transition: transform 0.25s ease-in-out 0s;
+    transition: transform 0.25s ease-in-out 0s;
   }
 
   &:hover:before {
