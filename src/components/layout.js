@@ -15,6 +15,7 @@ import "./layout.css"
 
 const theme = {
   primary: "black",
+  mobileWidth: "800px",
 }
 
 const Layout = ({ children }) => (

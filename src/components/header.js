@@ -30,7 +30,7 @@ const RouteWrapper = styled.ul`
   padding: 0;
   background-color: black;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     position: absolute;
     top: 100%;
     left: 0;
@@ -50,7 +50,7 @@ const RouteWrapper = styled.ul`
 const RouteListItem = styled.li`
   margin-left: 1.4rem;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     padding: 0.75em 0;
   }
 `
@@ -96,7 +96,7 @@ const MenuButton = styled.button`
   background-color: black;
   border: 0;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     display: none;
   }
 `

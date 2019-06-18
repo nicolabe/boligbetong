@@ -39,7 +39,7 @@ const ForegroundText = styled.div`
   line-height: 1.5;
   text-align: center;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     font-size: 22px;
     line-height: 1.3;
   }
