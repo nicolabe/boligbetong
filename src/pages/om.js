@@ -47,7 +47,7 @@ const AboutPage = () => (
             img={emptyImage}
             title="Beregner"
           >
-            NA
+            Detaljer kommer
           </UserProfile>
         </UserProfileListItem>
       </UserProfileList>

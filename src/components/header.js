@@ -21,6 +21,10 @@ const HeaderWrapper = styled.nav`
   align-items: center;
   position: relative;
   z-index: 3;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    justify-content: flex-start;
+  }
 `
 
 const RouteWrapper = styled.ul`
@@ -95,6 +99,7 @@ const MenuButton = styled.button`
   cursor: pointer;
   background-color: black;
   border: 0;
+  padding-right: 1em;
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     display: none;
@@ -168,6 +173,9 @@ const Header = ({ siteTitle }) => {
           </RouteListItem>
           <RouteListItem>
             <RouteLink to="/om">Om oss</RouteLink>
+          </RouteListItem>
+          <RouteListItem>
+            <RouteLink to="/priser">Priser</RouteLink>
           </RouteListItem>
         </RouteWrapper>
       </HeaderWrapper>
