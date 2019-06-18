@@ -169,9 +169,6 @@ const Header = ({ siteTitle }) => {
           <RouteListItem>
             <RouteLink to="/om">Om oss</RouteLink>
           </RouteListItem>
-          <RouteListItem>
-            <RouteLink to="/kontakt">Kontakt</RouteLink>
-          </RouteListItem>
         </RouteWrapper>
       </HeaderWrapper>
     </StyledHeader>

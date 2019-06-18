@@ -38,6 +38,11 @@ const ForegroundText = styled.div`
   padding: 1em;
   line-height: 1.5;
   text-align: center;
+
+  @media screen and (max-width: 800px) {
+    font-size: 22px;
+    line-height: 1.3;
+  }
 `
 
 const IndexPage = () => (
@@ -45,7 +50,7 @@ const IndexPage = () => (
     <SEO title="Hjem" />
     <BackgroundImage />
     <ForegroundText>
-      <h1>Betong til boligformål, i Vestfold og Telemark</h1>
+      <h1>Betong til boligformål. I Vestfold og Telemark</h1>
     </ForegroundText>
   </Layout>
 )
