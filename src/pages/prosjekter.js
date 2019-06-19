@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { PageContent } from "../styled_components"
 import { graphql } from "gatsby"
-import { Project } from "../components/Project"
+import { ProjectView } from "../components/ProjectViewer"
 import styled from "styled-components"
 
 const ProjectsContainer = styled.div``
@@ -16,7 +16,7 @@ const ProjectsPage = ({ data }) => {
       <PageContent>
         <ProjectsContainer>
           {data.allContentfulProject.edges.map(project => (
-            <Project key={project.node.id} project={project.node} />
+            <ProjectView key={project.node.id} project={project.node} />
           ))}
         </ProjectsContainer>
       </PageContent>

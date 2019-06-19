@@ -6,7 +6,7 @@ const Image = styled.img`
   width: 250px;
 `
 
-export const Project = ({ project }) => (
+export const ProjectView = ({ project }) => (
   <div>
     <h2>{project.name}</h2>
     <p>{project.description && project.description.description}</p>
