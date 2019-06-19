@@ -5,3 +5,7 @@ export const PageContent = styled.div`
   margin: 0 auto;
   padding: 1.45rem 1.0875rem;
 `
+
+export const PageHeader = styled.h1``
+
+export const PageSubtext = styled.section``

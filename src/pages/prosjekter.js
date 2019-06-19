@@ -2,18 +2,29 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { PageContent } from "../styled_components"
+import { PageHeader, PageSubtext, PageContent } from "../styled_components"
 import { graphql } from "gatsby"
 import { ProjectView } from "../components/ProjectView"
 import styled from "styled-components"
 
-const ProjectsContainer = styled.div``
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`
 
 const ProjectsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Prosjekter" />
       <PageContent>
+        <section>
+          <PageHeader>Våre prosjekter</PageHeader>
+          <PageSubtext>
+            Noen av prosjektene vi jobber med for tiden eller har jobbet med
+            tidligere.
+          </PageSubtext>
+        </section>
         <ProjectsContainer>
           {data.allContentfulProject.edges.map(project => (
             <ProjectView key={project.node.id} project={project.node} />
@@ -34,6 +45,7 @@ export const pageQuery = graphql`
           description {
             description
           }
+          createdAt
           images {
             id
             file {
