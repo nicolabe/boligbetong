@@ -5,9 +5,12 @@ import SEO from "../components/seo"
 import { PageContent } from "../styled_components"
 
 const PricesPage = () => (
-  <Layout>
+  <Layout
+    header="Priser"
+    description="Prisliste for forskjellige typer oppdrag"
+  >
     <SEO title="Prices" />
-    <PageContent>Her kommer det en prisliste</PageContent>
+    <PageContent>TBA</PageContent>
   </Layout>
 )
 

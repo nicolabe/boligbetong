@@ -36,7 +36,7 @@ const ProjectHeader = styled.h2`
 `
 
 const DescriptionContainer = styled.p`
-  width: 160px;
+  width: 240px;
 `
 
 export const ProjectView = ({ project }) => (

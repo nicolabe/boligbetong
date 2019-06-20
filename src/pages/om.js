@@ -27,10 +27,12 @@ const UserProfileListItem = styled.li`
 `
 
 const AboutPage = () => (
-  <Layout>
+  <Layout
+    header="Om oss"
+    description="Her kommer det informasjon om oss i Boligbetong AS"
+  >
     <SEO title="Om" />
     <PageContent>
-      Her er litt info om oss:
       <UserProfileList>
         <UserProfileListItem>
           <UserProfile
@@ -51,9 +53,11 @@ const AboutPage = () => (
           </UserProfile>
         </UserProfileListItem>
       </UserProfileList>
+      <br />
       <a
         href="https://mittanbud.no/profil/865442/bolig-betong-as/#overview"
         target="_blank"
+        style={{ fontSize: "22px" }}
       >
         Mitt anbud
       </a>

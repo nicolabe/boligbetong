@@ -3,6 +3,13 @@ import styled from "styled-components"
 
 const UserProfileContainer = styled.div`
   display: flex;
+  -webkit-box-shadow: 4px 10px 45px -14px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 4px 10px 45px -14px rgba(0, 0, 0, 0.49);
+  box-shadow: 4px 10px 45px -14px rgba(0, 0, 0, 0.49);
+  background-color: white;
+  margin-right: 1.5em;
+  padding: 1.4em;
+  border-radius: 10px;
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     margin-right: 5em;
@@ -25,6 +32,7 @@ const Image = styled.img`
 
 const HeaderText = styled.h2`
   margin-bottom: 0;
+  padding-right: 0.5em;
 `
 
 const TitleText = styled.p`
