@@ -21,7 +21,7 @@ const ProjectContainer = styled.div`
   -moz-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
   box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
   background-color: white;
-  margin: 1.4em 0;
+  margin-bottom: 1.4em;
   padding: 1.2em;
   border-radius: 10px;
   height: 300px;
