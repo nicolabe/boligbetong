@@ -36,7 +36,7 @@ const RouteWrapper = styled.ul`
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     position: absolute;
-    top: 100%;
+    top: 99%;
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -52,10 +52,11 @@ const RouteWrapper = styled.ul`
 `
 
 const RouteListItem = styled.li`
-  margin-left: 1.4rem;
+  margin-left: 2rem;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     padding: 0.75em 0;
+    margin-left: 1.4rem;
   }
 `
 
