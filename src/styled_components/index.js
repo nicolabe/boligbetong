@@ -11,11 +11,19 @@ export const PageHeader = styled.h1`
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    font-size: 24px;
+  }
 `
 
 export const PageSubtext = styled.p`
   text-align: center;
   font-size: 20px;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    font-size: 16px;
+  }
 `
 
 export const PageHeaderContainer = styled.section`

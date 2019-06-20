@@ -9,6 +9,11 @@ const Image = styled.img`
   max-height: 250px;
   max-width: 250px;
   margin-right: 1em;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    max-height: 100px;
+    max-width: 100px;
+  }
 `
 
 const ProjectContainer = styled.div`
@@ -21,6 +26,10 @@ const ProjectContainer = styled.div`
   padding: 1.2em;
   border-radius: 10px;
   height: 300px;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    height: 150px;
+  }
 `
 
 const ProjectInfoContainer = styled.div`
