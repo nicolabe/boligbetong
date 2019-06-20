@@ -17,18 +17,18 @@ const Image = styled.img`
 `
 
 const ProjectContainer = styled.div`
-  -webkit-box-shadow: 4px 10px 45px -14px rgba(0, 0, 0, 0.49);
-  -moz-box-shadow: 4px 10px 45px -14px rgba(0, 0, 0, 0.49);
-  box-shadow: 4px 10px 45px -14px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
+  box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
   background-color: white;
   margin: 1.4em 0;
-  margin-right: 1.5em;
   padding: 1.2em;
   border-radius: 10px;
   height: 300px;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     height: 150px;
+    margin-top: 0;
   }
 `
 
