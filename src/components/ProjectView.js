@@ -54,7 +54,7 @@ const MetadataContainer = styled.ul`
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     width: 140px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   &:after {
