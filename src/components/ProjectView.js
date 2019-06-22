@@ -12,8 +12,8 @@ const Image = styled.img`
   margin-right: 1em;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 110px;
+    max-width: 110px;
   }
 `
 
@@ -64,6 +64,11 @@ const MetadataContainer = styled.ul`
     height: 280px;
     top: -40px;
     left: 100%;
+
+    @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+      height: 110px;
+      top: -15px;
+    }
   }
 `
 
