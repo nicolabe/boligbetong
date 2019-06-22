@@ -67,14 +67,10 @@ const RouteLink = styled(Link)`
   position: relative;
   font-size: 1.2rem;
 
-  &:hover {
-    color: #eee;
-  }
-
   &:before {
     content: "";
     position: absolute;
-    background-color: #eee;
+    background-color: white;
     width: 100%;
     height: 1px;
     bottom: -2px;
