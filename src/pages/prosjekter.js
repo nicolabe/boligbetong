@@ -34,10 +34,10 @@ export const pageQuery = graphql`
         node {
           id
           name
-          description {
-            description
-          }
-          createdAt
+          type
+          price
+          area
+          landRegistry
           images {
             id
             file {

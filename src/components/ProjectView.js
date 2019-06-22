@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const ImageContainer = styled.div`
   display: flex;
+  margin-left: 1.3em;
 `
 
 const Image = styled.img`
@@ -44,14 +45,63 @@ const ProjectHeader = styled.h2`
   margin-top: 0;
 `
 
-const DescriptionContainer = styled.p`
-  width: 240px;
+const MetadataContainer = styled.ul`
+  width: 260px;
+  list-style: none;
+  padding: 0;
+  line-height: 1.3;
+  position: relative;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    width: 140px;
+    font-size: 14px;
+  }
+
+  &:after {
+    content: "";
+    border-right: 2px solid #ccc;
+    position: absolute;
+    height: 280px;
+    top: -40px;
+    left: 100%;
+  }
+`
+
+const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+`
+
+const ListLabel = styled.span`
+  font-weight: 700;
+`
+
+const ListData = styled.span`
+  margin-right: 1.3em;
 `
 
 export const ProjectView = ({ project }) => (
   <ProjectContainer>
     <ProjectHeader>{project.name}</ProjectHeader>
     <ProjectInfoContainer>
+      <MetadataContainer>
+        <ListItem>
+          <ListLabel>Type</ListLabel>
+          <ListData>{project.type}</ListData>
+        </ListItem>
+        <ListItem>
+          <ListLabel>Areal</ListLabel>
+          <ListData>{project.area} m2</ListData>
+        </ListItem>
+        <ListItem>
+          <ListLabel>Gnr/Bnr</ListLabel>
+          <ListData>{project.landRegistry}</ListData>
+        </ListItem>
+        <ListItem>
+          <ListLabel>Pris</ListLabel>
+          <ListData> {project.price},-</ListData>
+        </ListItem>
+      </MetadataContainer>
       <ImageContainer>
         {project.images &&
           project.images.map(image => (
@@ -62,9 +112,6 @@ export const ProjectView = ({ project }) => (
             />
           ))}
       </ImageContainer>
-      <DescriptionContainer>
-        {project.description && project.description.description}
-      </DescriptionContainer>
     </ProjectInfoContainer>
   </ProjectContainer>
 )
