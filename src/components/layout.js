@@ -16,7 +16,7 @@ const theme = {
   mobileWidth: "800px",
 }
 
-const Layout = ({ children, header, description }) => (
+const Layout = ({ children, header, description, path }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -30,7 +30,7 @@ const Layout = ({ children, header, description }) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header siteTitle={data.site.siteMetadata.title} path={path} />
           <div>
             {header && (
               <PageHeaderContainer>

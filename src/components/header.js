@@ -20,10 +20,14 @@ const HeaderWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 3;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     justify-content: flex-start;
+    ${({ path }) =>
+      path === "/*" &&
+      `
+      z-index: 1;
+    `}
   }
 `
 
@@ -40,10 +44,14 @@ const RouteWrapper = styled.ul`
     left: 0;
     width: 100%;
     flex-direction: column;
-    z-index: 1;
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
+    ${({ path }) =>
+      path === "/*" &&
+      `
+      z-index: 1;
+    `}
   }
 
   &.showing {
@@ -146,7 +154,7 @@ const SuperScript = styled.sup`
   position: relative;
 `
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, path }) => {
   const [showMenu, setShowMenu] = useState(false)
 
   const toggleMenu = () => {
@@ -155,7 +163,7 @@ const Header = ({ siteTitle }) => {
 
   return (
     <StyledHeader>
-      <HeaderWrapper>
+      <HeaderWrapper path={path}>
         <MenuButton onClick={toggleMenu}>
           <BurgerIcon />
         </MenuButton>
@@ -164,7 +172,7 @@ const Header = ({ siteTitle }) => {
             Boligbetong <SuperScript>AS</SuperScript>
           </StyledTitle>
         </StyledLinkTitle>
-        <RouteWrapper className={showMenu ? "showing" : ""}>
+        <RouteWrapper className={showMenu ? "showing" : ""} path={path}>
           <RouteListItem>
             <RouteLink to="/prosjekter">Prosjekter</RouteLink>
           </RouteListItem>

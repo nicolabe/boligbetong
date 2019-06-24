@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState, Fragment } from "react"
 import styled from "styled-components"
+import Carousel, { Modal, ModalGateway } from "react-images"
 
 const ImageContainer = styled.div`
   display: flex;
@@ -85,38 +86,53 @@ const ListData = styled.span`
   margin-right: 1.3em;
 `
 
-export const ProjectView = ({ project }) => (
-  <ProjectContainer>
-    <ProjectHeader>{project.name}</ProjectHeader>
-    <ProjectInfoContainer>
-      <MetadataContainer>
-        <ListItem>
-          <ListLabel>Type</ListLabel>
-          <ListData>{project.type}</ListData>
-        </ListItem>
-        <ListItem>
-          <ListLabel>Areal</ListLabel>
-          <ListData>{project.area} m2</ListData>
-        </ListItem>
-        <ListItem>
-          <ListLabel>Gnr/Bnr</ListLabel>
-          <ListData>{project.landRegistry}</ListData>
-        </ListItem>
-        <ListItem>
-          <ListLabel>Pris</ListLabel>
-          <ListData> {project.price},-</ListData>
-        </ListItem>
-      </MetadataContainer>
-      <ImageContainer>
-        {project.images &&
-          project.images.map(image => (
-            <Image
-              key={image.id}
-              src={image.file.url}
-              alt={image.file.fileName}
-            />
-          ))}
-      </ImageContainer>
-    </ProjectInfoContainer>
-  </ProjectContainer>
-)
+export const ProjectView = ({ project }) => {
+  const [modalOpen, setModalOpen] = useState(false)
+  const images = project.images.map(image => ({ src: image.file.url }))
+  const toggleModal = () => setModalOpen(!modalOpen)
+
+  return (
+    <Fragment>
+      <ProjectContainer>
+        <ProjectHeader>{project.name}</ProjectHeader>
+        <ProjectInfoContainer>
+          <MetadataContainer>
+            <ListItem>
+              <ListLabel>Type</ListLabel>
+              <ListData>{project.type}</ListData>
+            </ListItem>
+            <ListItem>
+              <ListLabel>Areal</ListLabel>
+              <ListData>{project.area} m2</ListData>
+            </ListItem>
+            <ListItem>
+              <ListLabel>Gnr/Bnr</ListLabel>
+              <ListData>{project.landRegistry}</ListData>
+            </ListItem>
+            <ListItem>
+              <ListLabel>Pris</ListLabel>
+              <ListData> {project.price},-</ListData>
+            </ListItem>
+          </MetadataContainer>
+          <ImageContainer>
+            {images.map(({ src }, j) => (
+              <Image
+                onClick={() => toggleModal(j)}
+                key={src}
+                alt="ett bilde"
+                src={src}
+              />
+            ))}
+          </ImageContainer>
+        </ProjectInfoContainer>
+      </ProjectContainer>
+      <ModalGateway>
+        {modalOpen ? (
+          <Modal onClose={toggleModal}>
+            <Carousel views={images} />
+          </Modal>
+        ) : null}
+      </ModalGateway>
+    </Fragment>
+  )
+}

@@ -23,7 +23,6 @@ const BackgroundImage = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
   }
 `
 
@@ -34,7 +33,6 @@ const ForegroundText = styled.div`
   left: 50px;
   right: 50px;
   color: white;
-  z-index: 2;
   padding: 1em;
   line-height: 1.5;
   text-align: center;
@@ -45,14 +43,16 @@ const ForegroundText = styled.div`
   }
 `
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Hjem" />
-    <BackgroundImage />
-    <ForegroundText>
-      <h1>Betong til boligformål. I Vestfold og Telemark</h1>
-    </ForegroundText>
-  </Layout>
-)
+const IndexPage = ({ path }) => {
+  return (
+    <Layout path={path}>
+      <SEO title="Hjem" />
+      <BackgroundImage />
+      <ForegroundText>
+        <h1>Betong til boligformål. I Vestfold og Telemark</h1>
+      </ForegroundText>
+    </Layout>
+  )
+}
 
 export default IndexPage
