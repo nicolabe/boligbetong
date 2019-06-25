@@ -5,12 +5,14 @@ import Carousel, { Modal, ModalGateway } from "react-images"
 const ImageContainer = styled.div`
   display: flex;
   margin-left: 1.3em;
+  overflow-x: scroll;
 `
 
 const Image = styled.img`
   max-height: 250px;
   max-width: 250px;
   margin-right: 1em;
+  cursor: pointer;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     max-height: 110px;
@@ -54,7 +56,8 @@ const MetadataContainer = styled.ul`
   position: relative;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
-    width: 140px;
+    width: 130px;
+    min-width: 130px;
     font-size: 12px;
   }
 
@@ -68,7 +71,7 @@ const MetadataContainer = styled.ul`
 
     @media screen and (max-width: ${props => props.theme.mobileWidth}) {
       height: 110px;
-      top: -15px;
+      top: -12px;
     }
   }
 `
@@ -88,8 +91,12 @@ const ListData = styled.span`
 
 export const ProjectView = ({ project }) => {
   const [modalOpen, setModalOpen] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
   const images = project.images.map(image => ({ src: image.file.url }))
-  const toggleModal = () => setModalOpen(!modalOpen)
+  const toggleModal = index => {
+    setModalOpen(!modalOpen)
+    setCurrentIndex(index)
+  }
 
   return (
     <Fragment>
@@ -115,21 +122,23 @@ export const ProjectView = ({ project }) => {
             </ListItem>
           </MetadataContainer>
           <ImageContainer>
-            {images.map(({ src }, j) => (
-              <Image
-                onClick={() => toggleModal(j)}
-                key={src}
-                alt="ett bilde"
-                src={src}
-              />
-            ))}
+            {images.map(({ src }, index) => {
+              return (
+                <Image
+                  onClick={() => toggleModal(index)}
+                  key={src}
+                  alt="ett bilde"
+                  src={src}
+                />
+              )
+            })}
           </ImageContainer>
         </ProjectInfoContainer>
       </ProjectContainer>
       <ModalGateway>
         {modalOpen ? (
-          <Modal onClose={toggleModal}>
-            <Carousel views={images} />
+          <Modal onClose={toggleModal} closeOnBackdropClick={true}>
+            <Carousel views={images} currentIndex={currentIndex} />
           </Modal>
         ) : null}
       </ModalGateway>

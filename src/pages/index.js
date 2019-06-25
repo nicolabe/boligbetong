@@ -3,6 +3,9 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
+import backgroundImage from "../images/background-image.jpg"
+
+console.log(backgroundImage)
 
 const BackgroundImage = styled.div`
   height: calc(100vh - 102px);
@@ -12,7 +15,7 @@ const BackgroundImage = styled.div`
 
   &:before {
     content: "";
-    background-image: url("https://unsplash.it/1920/1080");
+    background-image: url("${backgroundImage}");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

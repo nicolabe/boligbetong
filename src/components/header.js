@@ -22,6 +22,7 @@ const HeaderWrapper = styled.nav`
   position: relative;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    padding: 1rem 1.0875rem;
     justify-content: flex-start;
     ${({ path }) =>
       path === "/*" &&
