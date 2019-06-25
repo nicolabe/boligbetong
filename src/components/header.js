@@ -105,7 +105,7 @@ const MenuButton = styled.button`
   cursor: pointer;
   background-color: black;
   border: 0;
-  padding-right: 2em;
+  margin-right: 1.5em;
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     display: none;
