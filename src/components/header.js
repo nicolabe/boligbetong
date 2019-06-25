@@ -48,18 +48,20 @@ const RouteWrapper = styled.ul`
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
+    padding-bottom: 1em;
+
     ${({ path }) =>
       path === "/*" &&
       `
       z-index: 1;
     `}
-  }
 
-  &.showing {
-    transform: scale(1, 1);
+    &.showing {
+      transform: scale(1, 1);
 
-    a {
-      opacity: 1;
+      a {
+        opacity: 1;
+      }
     }
   }
 `

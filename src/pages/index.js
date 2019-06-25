@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import backgroundImage from "../images/background-image.jpg"
 
-console.log(backgroundImage)
-
 const BackgroundImage = styled.div`
   height: calc(100vh - 102px);
   position: relative;
