@@ -57,6 +57,10 @@ const RouteWrapper = styled.ul`
 
   &.showing {
     transform: scale(1, 1);
+
+    a {
+      opacity: 1;
+    }
   }
 `
 
@@ -75,6 +79,7 @@ const RouteLink = styled(Link)`
   color: white;
   position: relative;
   font-size: 1.2rem;
+  transition: opacity 250ms ease-in-out 250ms;
 
   &:before {
     content: "";
@@ -95,6 +100,10 @@ const RouteLink = styled(Link)`
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    opacity: 0;
   }
 `
 
@@ -191,6 +200,7 @@ const Header = ({ siteTitle, path }) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  path: PropTypes.string,
 }
 
 Header.defaultProps = {
