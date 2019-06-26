@@ -4,6 +4,10 @@ export const PageContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.45rem 1.0875rem;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    padding: 0.8rem 0.5rem;
+  }
 `
 
 export const PageHeader = styled.h1`
@@ -29,4 +33,8 @@ export const PageSubtext = styled.p`
 export const PageHeaderContainer = styled.section`
   background-color: white;
   padding: 1em;
+
+  @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+    padding: 0.7em;
+  }
 `
