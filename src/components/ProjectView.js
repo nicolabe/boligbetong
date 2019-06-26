@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react"
 import styled from "styled-components"
+import { CardHeader } from "../styled_components"
 import Carousel, { Modal, ModalGateway } from "react-images"
 
 const ImageContainer = styled.div`
@@ -38,14 +39,6 @@ const ProjectContainer = styled.div`
 
 const ProjectInfoContainer = styled.div`
   display: flex;
-`
-
-const ProjectHeader = styled.h2`
-  font-weight: 300;
-  text-transform: uppercase;
-  font-size: 22px;
-  margin-bottom: 0.6em;
-  margin-top: 0;
 `
 
 const MetadataContainer = styled.ul`
@@ -104,7 +97,7 @@ export const ProjectView = ({ project }) => {
   return (
     <Fragment>
       <ProjectContainer>
-        <ProjectHeader>{project.name}</ProjectHeader>
+        <CardHeader>{project.name}</CardHeader>
         <ProjectInfoContainer>
           <MetadataContainer>
             <ListItem>

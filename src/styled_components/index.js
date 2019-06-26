@@ -38,3 +38,21 @@ export const PageHeaderContainer = styled.section`
     padding: 0.7em;
   }
 `
+
+export const Card = styled.div`
+  -webkit-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
+  box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
+  background-color: white;
+  margin-bottom: 1.4em;
+  padding: 1.2em;
+  border-radius: 10px;
+`
+
+export const CardHeader = styled.h2`
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-bottom: 0.6em;
+  margin-top: 0;
+`
