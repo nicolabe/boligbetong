@@ -92,7 +92,10 @@ const ListData = styled.span`
 export const ProjectView = ({ project }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const images = project.images.map(image => ({ src: image.file.url }))
+  const images = project.images.map(image => ({
+    src: image.file.url,
+    alt: image.file.fileName,
+  }))
   const toggleModal = index => {
     setModalOpen(!modalOpen)
     setCurrentIndex(index)
@@ -122,12 +125,12 @@ export const ProjectView = ({ project }) => {
             </ListItem>
           </MetadataContainer>
           <ImageContainer>
-            {images.map(({ src }, index) => {
+            {images.map(({ src, alt }, index) => {
               return (
                 <Image
                   onClick={() => toggleModal(index)}
                   key={src}
-                  alt="ett bilde"
+                  alt={alt}
                   src={src}
                 />
               )
