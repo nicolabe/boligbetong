@@ -61,6 +61,7 @@ const RouteWrapper = styled.ul`
 
       a {
         opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
       }
     }
   }
@@ -81,7 +82,7 @@ const RouteLink = styled(Link)`
   color: white;
   position: relative;
   font-size: 1.2rem;
-  transition: opacity 250ms ease-in-out 250ms;
+  transition: opacity 150ms ease-in-out;
 
   &:before {
     content: "";
