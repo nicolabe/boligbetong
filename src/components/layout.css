@@ -2,7 +2,11 @@ body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
-  background-color: #eee;
+  background-image: url("../images/background-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .hidden {

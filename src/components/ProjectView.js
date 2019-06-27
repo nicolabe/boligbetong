@@ -22,14 +22,11 @@ const Image = styled.img`
 `
 
 const ProjectContainer = styled.div`
-  -webkit-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
-  -moz-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
-  box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
   background-color: white;
   margin-bottom: 1.4em;
   padding: 1.2em;
-  border-radius: 10px;
   height: 300px;
+  opacity: 0.95;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     height: 150px;

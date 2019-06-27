@@ -3,13 +3,10 @@ import styled from "styled-components"
 
 const UserProfileContainer = styled.div`
   display: flex;
-  -webkit-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
-  -moz-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
-  box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
   background-color: white;
   padding: 1.4em;
-  border-radius: 10px;
   margin-bottom: 1em;
+  opacity: 0.95;
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     margin-right: 5em;

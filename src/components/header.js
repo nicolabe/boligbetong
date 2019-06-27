@@ -5,6 +5,10 @@ import styled from "styled-components"
 
 const StyledHeader = styled.header`
   background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 `
 
 const StyledLinkTitle = styled(Link)`

@@ -15,6 +15,7 @@ export const PageHeader = styled.h1`
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
+  opacity: 0.95;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     font-size: 24px;
@@ -33,20 +34,19 @@ export const PageSubtext = styled.p`
 export const PageHeaderContainer = styled.section`
   background-color: white;
   padding: 1em;
+  margin-top: 100px;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     padding: 0.7em;
+    margin-top: 87px;
   }
 `
 
 export const Card = styled.div`
-  -webkit-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
-  -moz-box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
-  box-shadow: 4px 10px 32px -10px rgba(0, 0, 0, 0.49);
   background-color: white;
   margin-bottom: 1.4em;
   padding: 1.2em;
-  border-radius: 10px;
+  opacity: 0.95;
 `
 
 export const CardHeader = styled.h2`

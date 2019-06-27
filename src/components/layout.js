@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import backgroundImage from "../images/background-image.jpg"
 
 import Header from "./header"
-import { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import "./layout.css"
 import {
   PageHeaderContainer,
@@ -15,6 +16,8 @@ const theme = {
   primary: "black",
   mobileWidth: "800px",
 }
+
+const MainContent = styled.div``
 
 const Layout = ({ children, header, description, path }) => (
   <StaticQuery
@@ -31,7 +34,7 @@ const Layout = ({ children, header, description, path }) => (
       <ThemeProvider theme={theme}>
         <>
           <Header siteTitle={data.site.siteMetadata.title} path={path} />
-          <div>
+          <MainContent>
             {header && (
               <PageHeaderContainer>
                 <PageHeader>{header}</PageHeader>
@@ -40,7 +43,7 @@ const Layout = ({ children, header, description, path }) => (
             )}
             <main>{children}</main>
             <footer />
-          </div>
+          </MainContent>
         </>
       </ThemeProvider>
     )}
