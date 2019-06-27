@@ -2,12 +2,15 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { PageContent } from "../styled_components"
+import { PageContent, Card } from "../styled_components"
 import styled from "styled-components"
 import { UserProfile } from "../components/UserProfile"
 
 import peterImage from "../images/peter.jpg"
 import emptyImage from "../images/empty.jpg"
+import mittanbud from "../images/mittanbud_logo.svg"
+import instagram from "../images/instagram_logo.svg"
+import pinterest from "../images/pinterest_logo.svg"
 
 const UserProfileList = styled.ul`
   list-style: none;
@@ -15,6 +18,8 @@ const UserProfileList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: row;
+  margin-bottom: 2em;
+  justify-content: space-between;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     flex-direction: column;
@@ -26,11 +31,24 @@ const UserProfileListItem = styled.li`
   margin: 0;
 `
 
+const DescriptionContainer = styled.section`
+  font-size: 14px;
+`
+
+const FindUsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const SoMeIcon = styled.img`
+  height: 110px;
+  width: 110px;
+  padding: 0 1em;
+`
+
 const AboutPage = () => (
-  <Layout
-    header="Om oss"
-    description="Her kommer det informasjon om oss i Boligbetong AS"
-  >
+  <Layout header="Om oss">
     <SEO title="Om" />
     <PageContent>
       <UserProfileList>
@@ -53,14 +71,71 @@ const AboutPage = () => (
           </UserProfile>
         </UserProfileListItem>
       </UserProfileList>
-      <br />
-      <a
-        href="https://mittanbud.no/profil/865442/bolig-betong-as/#overview"
-        target="_blank"
-        style={{ fontSize: "22px" }}
-      >
-        Mitt anbud
-      </a>
+      <Card>
+        <h2>Kort om oss</h2>
+        <DescriptionContainer>
+          <p>
+            Bolig Betong AS eies av Peter Raugland og Erlend Skjøtskift. Firmaet
+            ble starten høsten 2017 og har frem til sommeren 2019 støpt over 100
+            betongplater til hus, hytter, garasjer, låver og boder. Det har også
+            blitt noen støttemurer, vegger og trapper.
+          </p>
+
+          <p>
+            Vi er en liten og fokusert entreprenør som løfter de mindre
+            oppgavene for privat- og bedrifts-markedet.
+          </p>
+
+          <p>
+            Vi har erfaring, rutinene og utstyret til å levere gulvstøp opp til
+            200m2, samt vegger på opp til 100m2. Vi foretrekker entrepriser som
+            ligger rundt 100.000 til 200.000 kr, hvor vi har god tid til å
+            planlegge og få på plass en god dialog med de andre fagene som
+            inngår på byggeplassen.
+          </p>
+
+          <p>
+            Kundene våre er i fokus, og vi ønsker å bli oppfattet som hyggelige,
+            seriøse, ansvarlige og punktlige.
+          </p>
+        </DescriptionContainer>
+        <section>
+          <h3 style={{ marginBottom: 0, marginTop: "2em" }}>
+            Du finner oss her:
+          </h3>
+          <FindUsContainer>
+            <a
+              href="https://mittanbud.no/profil/865442/bolig-betong-as/#overview"
+              target="_blank"
+              title="Mitt anbud"
+            >
+              <SoMeIcon src={mittanbud} alt="mittanbud logo" />
+            </a>
+            <a
+              href="https://www.instagram.com/boligbetong.no/"
+              target="_blank"
+              title="Instagram"
+            >
+              <SoMeIcon
+                style={{ height: "50px", width: "50px" }}
+                src={instagram}
+                alt="instagram logo"
+              />
+            </a>
+            <a
+              href="https://www.pinterest.com/boligbetong/"
+              target="_blank"
+              title="Pinterest"
+            >
+              <SoMeIcon
+                src={pinterest}
+                alt="pinterest logo"
+                style={{ height: "50px", width: "50px" }}
+              />
+            </a>
+          </FindUsContainer>
+        </section>
+      </Card>
     </PageContent>
   </Layout>
 )

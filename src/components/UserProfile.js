@@ -9,7 +9,6 @@ const UserProfileContainer = styled.div`
   opacity: 0.95;
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
-    margin-right: 5em;
     margin-bottom: 0;
   }
 `

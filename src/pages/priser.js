@@ -18,6 +18,10 @@ const PricesPage = () => {
       type: "Garasje",
       price: "500",
     },
+    {
+      type: "Støttemur",
+      price: "400",
+    },
   ]
   return (
     <Layout
