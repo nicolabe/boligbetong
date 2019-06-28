@@ -54,5 +54,5 @@ export const CardHeader = styled.h2`
   text-transform: uppercase;
   font-size: 22px;
   margin-bottom: 0.6em;
-  margin-top: 0;
+  margin-top: 0.6em;
 `

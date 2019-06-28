@@ -1,15 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import { Card, CardHeader } from "../styled_components"
 
-const UserProfileContainer = styled.div`
+const UserProfileContainer = styled(Card)`
   display: flex;
-  background-color: white;
-  padding: 1.4em;
-  margin-bottom: 1em;
-  opacity: 0.95;
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     margin-bottom: 0;
+    width: 450px;
   }
 `
 
@@ -27,9 +25,11 @@ const Image = styled.img`
   }
 `
 
-const HeaderText = styled.h2`
+const HeaderText = styled(CardHeader)`
   margin-bottom: 0;
   padding-right: 0.5em;
+  margin-top: 20px;
+  text-transform: none;
 `
 
 const TitleText = styled.p`

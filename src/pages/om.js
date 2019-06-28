@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { PageContent, Card } from "../styled_components"
+import { PageContent, Card, CardHeader } from "../styled_components"
 import styled from "styled-components"
 import { UserProfile } from "../components/UserProfile"
 
@@ -18,7 +18,7 @@ const UserProfileList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: row;
-  margin-bottom: 2em;
+  margin-bottom: 1.4em;
   justify-content: space-between;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
@@ -39,6 +39,14 @@ const FindUsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+const FindUsHeader = styled.h3`
+  text-transform: none;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 2em;
 `
 
 const SoMeIcon = styled.img`
@@ -72,7 +80,7 @@ const AboutPage = () => (
         </UserProfileListItem>
       </UserProfileList>
       <Card>
-        <h2>Kort om oss</h2>
+        <CardHeader style={{ textTransform: "none" }}>Kort om oss</CardHeader>
         <DescriptionContainer>
           <p>
             Bolig Betong AS eies av Peter Raugland og Erlend Skjøtskift. Firmaet
@@ -100,9 +108,7 @@ const AboutPage = () => (
           </p>
         </DescriptionContainer>
         <section>
-          <h3 style={{ marginBottom: 0, marginTop: "2em" }}>
-            Du finner oss her:
-          </h3>
+          <FindUsHeader>Du finner oss her</FindUsHeader>
           <FindUsContainer>
             <a
               href="https://mittanbud.no/profil/865442/bolig-betong-as/#overview"

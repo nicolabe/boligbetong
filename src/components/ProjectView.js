@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react"
 import styled from "styled-components"
-import { CardHeader } from "../styled_components"
+import { Card, CardHeader } from "../styled_components"
 import Carousel, { Modal, ModalGateway } from "react-images"
 
 const ImageContainer = styled.div`
@@ -21,12 +21,8 @@ const Image = styled.img`
   }
 `
 
-const ProjectContainer = styled.div`
-  background-color: white;
-  margin-bottom: 1.4em;
-  padding: 1.2em;
+const ProjectContainer = styled(Card)`
   height: 300px;
-  opacity: 0.95;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     height: 150px;
