@@ -1,18 +1,16 @@
-html,
-body {
-  height: 100%;
+html {
+  background: url("../images/background-image.jpg") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
-  background-image: url("../images/background-image.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  background-attachment: fixed;
 }
 
 .hidden {

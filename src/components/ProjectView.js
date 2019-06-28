@@ -55,8 +55,8 @@ const MetadataContainer = styled.ul`
     content: "";
     border-right: 2px solid #ccc;
     position: absolute;
-    height: 280px;
-    top: -40px;
+    height: 270px;
+    top: -20px;
     left: 100%;
 
     @media screen and (max-width: ${props => props.theme.mobileWidth}) {
