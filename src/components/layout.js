@@ -18,6 +18,16 @@ const theme = {
 }
 
 const MainContent = styled.div``
+const BackgroundImageContainer = styled.img`
+  min-height: 100%;
+  min-width: 600px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+`
 
 const Layout = ({ children, header, description, path }) => (
   <StaticQuery
@@ -34,6 +44,10 @@ const Layout = ({ children, header, description, path }) => (
       <ThemeProvider theme={theme}>
         <>
           <Header siteTitle={data.site.siteMetadata.title} path={path} />
+          <BackgroundImageContainer
+            src={backgroundImage}
+            alt="Bakgrunnsbilde"
+          />
           <MainContent>
             {header && (
               <PageHeaderContainer>
