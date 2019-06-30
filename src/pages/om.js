@@ -34,6 +34,10 @@ const UserProfileListItem = styled.li`
 
   & + & {
     margin-left: 1.4em;
+
+    @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+      margin-left: 0;
+    }
   }
 `
 
