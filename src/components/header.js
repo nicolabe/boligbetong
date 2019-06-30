@@ -77,6 +77,7 @@ const RouteListItem = styled.li`
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     padding: 0.75em 0;
     margin-left: 1.4rem;
+    display: flex;
   }
 `
 
@@ -101,6 +102,10 @@ const RouteLink = styled(Link)`
     -webkit-transform: scaleX(0);
     -webkit-transition: transform 0.25s ease-in-out 0s;
     transition: transform 0.25s ease-in-out 0s;
+
+    @media screen and (max-width: ${props => props.theme.mobileWidth}) {
+      content: none;
+    }
   }
 
   &:hover:before {
@@ -111,6 +116,7 @@ const RouteLink = styled(Link)`
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     opacity: 0;
+    flex: 1;
   }
 `
 

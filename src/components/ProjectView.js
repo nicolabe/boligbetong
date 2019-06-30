@@ -24,6 +24,7 @@ const Image = styled.img`
 
 const ProjectContainer = styled(Card)`
   height: 300px;
+  padding-left: 1.4em;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     height: 150px;
