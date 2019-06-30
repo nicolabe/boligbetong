@@ -23,6 +23,7 @@ const UserProfileList = styled.ul`
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     flex-direction: column;
+    margin-bottom: 0;
   }
 `
 
