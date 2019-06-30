@@ -4,6 +4,7 @@ export const PageContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.45rem 1.0875rem;
+  position: relative;
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
     padding: 0.8rem 0.5rem;

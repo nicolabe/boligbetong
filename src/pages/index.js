@@ -8,27 +8,26 @@ import { PageContent } from "../styled_components"
 const ForegroundText = styled.div`
   font-size: 28px;
   color: white;
-  padding: 1em;
+  padding: 0 1.4em;
   line-height: 1.5;
   text-align: center;
   position: absolute;
-  top: 30%;
+  top: 250px;
+  right: 50px;
+  left: 25px;
 
   &:before {
     content: "";
     background-color: black;
     z-index: -1;
     position: absolute;
-    height: 300px;
-    width: 97.1%;
+    height: 100%;
+    width: 100%;
     opacity: 0.7;
     top: 0;
     left: 0;
     border: 10px solid white;
-
-    @media screen and (max-width: ${props => props.theme.mobileWidth}) {
-      width: 93%;
-    }
+    margin-right: 2em;
   }
 
   @media screen and (max-width: ${props => props.theme.mobileWidth}) {
