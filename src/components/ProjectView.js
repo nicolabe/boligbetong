@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react"
 import styled from "styled-components"
 import { Card, CardHeader } from "../styled_components"
 import Carousel, { Modal, ModalGateway } from "react-images"
+import { formatCurrency } from "../utils"
 
 const ImageContainer = styled.div`
   display: flex;
@@ -99,7 +100,9 @@ export const ProjectView = ({ project }) => {
             </ListItem>
             <ListItem>
               <ListLabel>Areal</ListLabel>
-              <ListData>{project.area} m2</ListData>
+              <ListData>
+                {project.area} m<sup>2</sup>
+              </ListData>
             </ListItem>
             <ListItem>
               <ListLabel>Gnr/Bnr</ListLabel>
@@ -107,7 +110,7 @@ export const ProjectView = ({ project }) => {
             </ListItem>
             <ListItem>
               <ListLabel>Pris</ListLabel>
-              <ListData> {project.price},-</ListData>
+              <ListData> {formatCurrency(project.price, 0)},-</ListData>
             </ListItem>
           </MetadataContainer>
           <ImageContainer>
