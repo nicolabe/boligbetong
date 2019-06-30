@@ -7,7 +7,6 @@ const UserProfileContainer = styled(Card)`
 
   @media screen and (min-width: ${props => props.theme.mobileWidth}) {
     margin-bottom: 0;
-    width: 450px;
   }
 `
 

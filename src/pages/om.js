@@ -30,6 +30,11 @@ const UserProfileList = styled.ul`
 const UserProfileListItem = styled.li`
   padding: 0;
   margin: 0;
+  width: 100%;
+
+  & + & {
+    margin-left: 1.4em;
+  }
 `
 
 const DescriptionContainer = styled.section`
